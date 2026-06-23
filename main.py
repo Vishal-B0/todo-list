@@ -6,8 +6,8 @@ from sqlalchemy import Integer, String
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret-key-goes-here'
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///list1.db"
+app.config['SECRET_KEY'] = 'NEED TO WRITE THE SECREAT KEY'
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///DATABASENAME.db"
 
 
 class Base(DeclarativeBase):
@@ -32,7 +32,7 @@ with app.app_context():
 def todo():
     if request.method == "POST":
         task_text = request.form["todowork"]
-        raw_task_time = request.form["task-time"]  # string
+        raw_task_time = request.form["task-time"] 
 
         if task_text.strip() != "" and raw_task_time.strip() != "":
             task_time = datetime.fromisoformat(raw_task_time)

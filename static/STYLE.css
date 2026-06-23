@@ -82,12 +82,13 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-
+    font-size: larger;
+    color: white;
     margin-top: 12px;
     padding: 14px;
-
+    border: 2px solid black;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.2);
+    background-color: rgb(22 180 228 / 0.94);
 }
 
 .taskstore p {

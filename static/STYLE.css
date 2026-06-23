@@ -1,125 +1,143 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
 }
-
- 
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    background: linear-gradient(135deg,#4f8cff,#37c6ff,#29e0d7);
 }
- 
 .main {
-    width: 95%;
-    max-width: 450px;
-    height: 85vh;
-    padding: 20px;
-    border-radius: 20px;
+    width: 90%;
+    max-width: 650px;
+    min-height: 500px;
+    max-height: 85vh;
     overflow-y: auto;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 
     color: white;
 }
- 
+
 .main::-webkit-scrollbar {
     display: none;
 }
- 
 .todo-form {
     position: sticky;
     top: 0;
     z-index: 10;
-    padding-bottom: 12px;
-} 
-.todo-form h1 {
-    margin-bottom: 15px;
-    font-size: 2rem;
-    text-align: center;
+    padding-bottom: 15px;
 }
- 
+
+.todo-form h1 {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
 #todoinput,
 input[type="datetime-local"] {
     width: 100%;
-    height: 48px;
+    height: 50px;
+
     border: none;
     outline: none;
-    border-radius: 12px;
-    padding: 0 15px;
+
+    border-radius: 14px;
+
+    padding: 0 16px;
+
     margin-bottom: 12px;
+
     font-size: 16px;
+
+    background: rgba(255,255,255,0.95);
 }
- 
+
 button {
     width: 100%;
-    height: 48px;
+    height: 50px;
     border: none;
-    border-radius: 12px;
-    background: #0d6efd;
-    color: white;
+    border-radius: 14px;
     font-size: 16px;
     font-weight: 600;
+    color: white;
     cursor: pointer;
-    transition: 0.3s;
+    background: linear-gradient(135deg,#2563eb,#3b82f6);
+    transition: 0.3s ease;
+}
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg,#1d4ed8,#2563eb);
 }
 
-button:hover {
-    background: #0b5ed7;
-    transform: translateY(-2px);
-}
- 
 .taskstore {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 15px;
-    font-size: larger;
-    color: white;
-    margin-top: 12px;
-    padding: 14px;
-    border: 2px solid black;
-    border-radius: 12px;
-    background-color: rgb(22 180 228 / 0.94);
+    margin-top: 14px;
+    padding: 15px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: 0.3s ease;
+}
+.taskstore:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.25);
 }
 
-.taskstore p {
-    flex: 1;
-    font-size: 15px;
-    line-height: 1.5;
-    word-break: break-word;
-}
- 
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
- 
-@media screen and (max-width: 600px) {
+
+
+.task-content {
+    flex: 1;
+}
+
+.task-text {
+    font-size: 16px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.task-content small {
+    display: block;
+    margin-top: 5px;
+    color: rgba(255,255,255,0.85);
+}
+@media (max-width: 768px) {
+    .main {
+        width: 95%;
+        padding: 18px;
+    }
+    .todo-form h1 {
+        font-size: 1.9rem;
+    }
+}
+@media (max-width: 480px) {
 
     body {
-        padding: 10px;
-        align-items: flex-start;
-        padding-top: 20px;
-    }
-      .main {
-        width: 95%;
-        height: auto;
-        min-height: 180px;
-        max-height: none;
-        padding: 15px;
-        margin: 20px auto;
+        padding: 15px 8px;
     }
 
+    .main {
+        width: 100%;
+        min-height: 200px;
+        max-height: none;
+        padding: 15px;
+        border-radius: 18px;
+    }
 
     .todo-form h1 {
         font-size: 1.6rem;
@@ -129,7 +147,7 @@ input[type="checkbox"] {
     input[type="datetime-local"],
     button {
         height: 45px;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .taskstore {
@@ -137,24 +155,11 @@ input[type="checkbox"] {
         gap: 10px;
     }
 
-    .taskstore p {
+    .task-text {
         font-size: 14px;
     }
-}
 
-
-@media screen and (max-width: 499px) {
-    .main {
-        width: 98%;
-        min-height: 180px;
-        height: auto;
-        max-height: none;
-        padding: 12px;
-    }
-}
-@media screen and (min-width: 1025px) {
-
-    .main {
-        max-width: 500px;
+    .task-content small {
+        font-size: 12px;
     }
 }

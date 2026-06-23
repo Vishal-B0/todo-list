@@ -1,0 +1,78 @@
+body{
+    background: linear-gradient(to left,rgb(86,180,211),rgb(16,144,187));
+}
+
+.main{
+    width:50vw;
+    height:70vh;
+    background-color:lightskyblue;
+    position:relative;
+    left:25vw;
+    top:11vh;
+    color:white;
+    font-size:x-large;
+    text-align:center;
+    overflow-y:scroll;
+    scrollbar-width:none;
+}
+.todo-form{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+}
+#todoinput{
+
+    height:35px;
+    width:350px;
+    border-radius:30px;
+     position: sticky;
+    top:20px;
+    z-index: 2;
+}
+::placeholder{
+      padding-left: 20px;
+
+    }
+input[type="text"]{
+        font-size: large;
+      padding-left: 20px;
+}
+input[type="datetime-local"]{
+    position: sticky;
+    top: 10px;
+    width: 200px;
+    height: 35px;
+    border-radius: 14px;
+    z-index: 2;
+}
+button{
+    width:150px;
+    height:35px;
+    border-radius:14px;
+    background-color:lightblue;
+     position: sticky;
+      top: 30px;
+      z-index: 2;
+    display:block;
+    margin:15px auto 0 auto;
+}
+
+.taskstore{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px auto;
+    padding:10px;
+    background:#1d78a8;
+    border-radius:10px;
+    width:25vw;
+}
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+}
+.taskstore p{
+    word-wrap: break-word;
+    max-width: 180px;
+}

@@ -145,21 +145,19 @@ input[type="checkbox"] {
     .main {
         width: 95%;
         height: auto;
-        min-height: 250px;
+        min-height: 180px;
         max-height: none;
-        margin: 20px auto;
         padding: 15px;
-        border-radius: 15px;
+        margin: 20px auto;
     }
 }
 @media screen and (max-width: 499px) {
     .main {
         width: 98%;
-        height: 60vh;
-        min-height: 220px;
+        min-height: 180px;
+        height: auto;
+        max-height: none;
         padding: 12px;
-        margin: 10px auto;
-        border-radius: 12px;
     }
 }
 @media screen and (min-width: 1025px) {
